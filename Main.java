@@ -6,6 +6,7 @@ public class Main {
             System.out.println("1. Clase Punto");
             System.out.println("2. Clase Persona");
             System.out.println("3. Clase Rectángulo");
+            System.out.println("-1. Salir");
             opcion = Leer.leerEntero("Introduce una opción: ");
             switch(opcion){
                 case 1:
@@ -47,7 +48,42 @@ public class Main {
                         System.out.println(p.nombre+" "+p.apellidos+" con DNI "+p.dni+" es "+estado+" de edad");
                     }
                     break;
-
+                case 3:
+                    Rectangulo r1 = new Rectangulo();
+                    r1.x1 = 0;
+                    r1.y1 = 0;
+                    r1.x2 = 5;
+                    r1.y2 = 5;
+                    Rectangulo r2 = new Rectangulo();
+                    r2.x1 = 2;
+                    r2.y1 = 3;
+                    r2.x2 = 7;
+                    r2.y2 = 9;
+                    Rectangulo []rectangulos = new Rectangulo[]{r1,r2};
+                    for(Rectangulo r:rectangulos){
+                        System.out.println("Coordenadas vertice superior izquierdo:"+r.x1+" "+r.y1);
+                        System.out.println("Coordenadas vertice inferior derecho: "+r.x2+" "+r.y2);
+                        System.out.println("Perímetro: "+(((r.x2-r.x1)*2)+((r.y2-r.y1)*2)));
+                        System.out.println("Área: "+(r.x2-r.x1)*(r.y2-r.y1));
+                        System.out.println("----------");
+                    }
+                    r1.x1 += 4;
+                    r1.y1 += 2;
+                    r1.x2 += 3;
+                    r1.y2 += 2;
+                    r2.x1 += 4;
+                    r2.y1 += 2;
+                    r2.x2 += 3;
+                    r2.y2 += 2;
+                    System.out.println("Nuevos valores: ");
+                    System.out.println("----------");
+                    for(Rectangulo r:rectangulos){
+                        System.out.println("Coordenadas vertice superior izquierdo:"+r.x1+" "+r.y1);
+                        System.out.println("Coordenadas vertice inferior derecho: "+r.x2+" "+r.y2);
+                        System.out.println("Perímetro: "+(((r.x2-r.x1)*2)+((r.y2-r.y1)*2)));
+                        System.out.println("Área: "+(r.x2-r.x1)*(r.y2-r.y1));
+                        System.out.println("----------");
+                    }
             }
         }while(opcion!=-1);
     }
